@@ -3,7 +3,6 @@
 namespace Omnibus\Ups;
 
 use Omnibus\Config;
-use Omnibus\Exception\InvalidConfigException;
 use Omnibus\GatewayFactory;
 use Omnibus\Ups\Action\PickupAction;
 use Omnibus\Ups\Action\RatingAction;
@@ -31,7 +30,7 @@ final class UpsGatewayFactory extends GatewayFactory
             'sandbox' => false,
             'shipper' => null,
             'omnibus.api' => function (Config $c) {
-                $http = $this->http ?? (class_exists(HttpClient::class) ? HttpClient::create() : throw new InvalidConfigException('The "ups" gateway needs symfony/http-client.'));
+                $http = $this->http ?? HttpClient::create();
 
                 return new Api($http, (string) $c['client_id'], (string) $c['client_secret'], (string) $c['account_number'], (bool) $c['sandbox']);
             },

@@ -4,6 +4,13 @@ UPS for [glitchr/omnibus](https://github.com/glitchr-studio/omnibus): rates (Rat
 shipments and labels (Shipping API), tracking (Tracking API) and UPS Access Points (Locator API)
 - the REST APIs with OAuth2 client credentials.
 
+```php
+$gateway = (new UpsGatewayFactory($http))->create($options);   // $http: the application's HTTP client - none given, the factory makes its own; the options below
+```
+
+No framework needed: the package requires `glitchr/omnibus` and `symfony/http-client`. In a
+Symfony application, the same through the bundle's configuration:
+
 ```yaml
 omnibus:
     gateways:
