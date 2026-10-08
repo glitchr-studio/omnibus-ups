@@ -33,4 +33,4 @@ Shipping, Tracking and Locator products, plus your shipper account number.
 Built from UPS's published API documentation and tested on recorded answers; not yet run against
 the Customer Integration Environment: that needs the credentials above.
 
-License: LGPL-3.0-or-later.
+License: MIT since 2026-10-09; earlier versions remain published under LGPL-3.0-or-later.
